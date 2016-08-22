@@ -1,0 +1,61 @@
+// Forms
+// ========================================
+
+/*-----------------------
+Labels
+-----------------------*/
+label{
+  display: block;
+  @include rem(margin, 20px 0px 4px);
+  @include s-base;
+}
+
+/*-----------------------
+Inputs
+-----------------------*/
+#{$all-text-inputs},
+select,
+textarea{
+  @include appearance(none);
+  @include s-base;
+  border: 1px solid transparent;
+  border-radius: 1px;
+  box-sizing: border-box;
+  @include rem(padding, 8px);
+  width: 100%;
+  -webkit-font-smoothing: antialiased;
+
+  &:focus{
+    border-color: $blue-base;
+    outline: none;
+  }
+}
+
+textarea,
+textarea[type="text"]{
+  height: 100px;
+  @include rem(margin-bottom, 12px);
+  resize: vertical;
+}
+
+input[type="submit"]{
+  border: none;
+  @include s-small;
+  min-width: 200px;
+
+  &:hover{
+    border: none;
+    cursor: pointer;
+  }
+}
+
+.half-fields{
+  display: inline-block;
+  width: 100%;
+
+  .half-field{
+    @include media($tablet){
+      @include span-columns(6 of 12);
+    }
+  }
+}
